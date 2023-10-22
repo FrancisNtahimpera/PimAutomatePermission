@@ -1,0 +1,32 @@
+The script starts by checking if the AzureRM module is imported. If not, it installs it and imports it to use Azure cmdlets in the script.
+
+Then the script authenticates to Azure using the current credentials. Make sure you are signed in to Azure before running the script.
+
+Variables are defined to store the necessary information:
+
+$roleAssignmentName: The name of the role assignment you want to create (make sure it is unique).
+$principalId: The ID of the principal to whom you want to assign the role.
+$resourceGroup: The target resource group for role assignment.
+$roleDefinitionName: The name of the role you want to assign (for example, "Contributor" for a contributor).
+$pimConfigId: The PIM configuration ID (if using PIM).
+$permanentEligible: A flag (true or false) to determine whether the assignment should be permanent.
+$endDate: The end date of the assignment if it is not permanent.
+The script attempts to check if the specified role definition ($roleDefinitionName) exists in Azure. 
+If it does not find it, it displays an error message and exits the script.
+
+If the role definition exists, the script creates the role assignment using the information provided.
+ This assignment is based on the specified role and applies to the principal in the given resource group.
+
+If you are using Azure Privileged Identity Management (PIM) and have provided a PIM configuration ID ($pimConfigId), 
+the script configures the PIM settings for this assignment. This may include options such as tenure and end date of the award.
+
+The script displays a success message if the role assignment is created successfully.
+
+If there is an error while running the script, it displays an error message to let you know what happened.
+
+Finally, the script logs out of Azure to end the session.
+
+This script helps automate the creation of role assignments with or without the use of Azure Privileged Identity Management, 
+depending on your needs. Be sure to customize the variables to reflect your own Azure configuration.
+
+

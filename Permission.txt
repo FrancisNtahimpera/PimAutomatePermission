@@ -1,0 +1,39 @@
+The permissions required to run a script that creates role assignments in Azure depend on the context and 
+the specific resources you are accessing. 
+
+Here is a list of permissions  to run 
+the script:
+
+Microsoft.Authorization/roleAssignments/write: This permission is required to create role assignments.
+
+Microsoft.Authorization/roleAssignments/delete: If you need to delete existing role assignments, you will 
+need this permission.
+
+Microsoft.Resources/subscriptions/resourceGroups/read: This permission is required to read information 
+about resource groups.
+
+Microsoft.Resources/subscriptions/resourceGroups/resources/read: You will need this permission to read 
+information about resources within resource groups.
+
+Microsoft.Authorization/roleDefinitions/read: To check if a specific role definition exists, you will 
+need read permission on the role definitions.
+
+Microsoft.Authorization/roleDefinitions/list: If you need to list all available role definitions, you 
+will need this permission.
+
+Microsoft.Graph/users/read: If you are using user-based principals (for example, Azure AD accounts), 
+you will need permission to read information about those users.
+
+Microsoft.Authorization/roleAssignmentSchedule/write: If you are using Azure Privileged Identity 
+Management (PIM) and you are configuring schedule settings, you will need this permission to write 
+these settings.
+
+Microsoft.Authorization/roleAssignmentSchedule/read: If you need to read existing schedule settings, 
+you will need this permission.
+
+Microsoft.Authorization/roleAssignmentSchedule/delete: If you need to delete schedule settings, 
+this permission is required.
+
+Exact permissions may vary depending on how you've configured your custom roles, resource groups, and 
+whether you're using Azure PIM. Be sure to review the Azure documentation for specific information on 
+the permissions required for your usage scenario.
